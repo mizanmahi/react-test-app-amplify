@@ -27,6 +27,7 @@ jobs:
               key: ${{ secrets.EC2_SSH }}
               port: 22
               script: |
+                 export PATH=$PATH:/usr/local/bin  # Ensure yarn and pm2 are in PATH
                  # Navigate to your app directory
                  cd /home/${{ secrets.EC2_USER_NAME }}/react-test-app-amplify
 
