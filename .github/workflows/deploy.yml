@@ -34,7 +34,17 @@ jobs:
                  # Verifying the navigation
                  ls -la
 
+                 # Install Yarn if not already installed
+                  if ! command -v yarn &> /dev/null; then
+                  echo "Yarn is not installed. Installing Yarn..."
+                  npm install -g yarn
+                  fi
 
+                  # Install PM2 if not already installed
+                  if ! command -v pm2 &> /dev/null; then
+                  echo "PM2 is not installed. Installing PM2..."
+                  npm install -g pm2
+                  fi
 
                  yarn install --frozen-lockfile
 
