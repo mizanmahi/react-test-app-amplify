@@ -5,10 +5,16 @@ on:
          - main
          - dev
 jobs:
-   test:
+   build:
       runs-on: ubuntu-latest
       steps:
-         - name: Checout code
+         - name: Checout Code
            uses: actions/checkout@v3
-         - name: List checkout files\
-           run: ls
+         - name: Install Node
+           uses: actions/setup-node@v3
+           with:
+              node-version: 20
+         - name: List checkout files and node version
+           run: |
+              ls
+              node --version
